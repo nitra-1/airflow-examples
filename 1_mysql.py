@@ -2,10 +2,16 @@
 Author Nitin Rane
 
 Sample ETL process which takes data from from Tab1, modifies the data and inserts into Tab2
-Move this file to airflow/dags
 
 Prerequisites : 
 Step - 1 
+DB User creation
+	Create MySQL user as below:
+
+	CREATE USER 'airflow'@'localhost' IDENTIFIED BY 'airflow';
+	GRANT ALL PRIVILEGES ON * . * TO 'airflow'@'localhost';
+
+Step - 2 
 DB Structure
 	Execute following queries in mysql.
 
@@ -16,24 +22,23 @@ DB Structure
 	execute following INSERT query with the data of your choice and create multiple records
 	5. INSERT INTO tab1 VALUES('')
 
-Step - 2 
-DB User creation
-	I have created MySQL user as below:
-
-	CREATE USER 'airflow'@'localhost' IDENTIFIED BY 'airflow';
-	GRANT ALL PRIVILEGES ON * . * TO 'airflow'@'localhost';
-
 Step - 3
-Create new MySQL connection in airflow
+Create new MySQL connection in airflow:
 Open Airflow in browser 
 Open Admin->Connections
-Click + buttong to add new connection and enter following values:
+Click + button to add new connection and enter following values:
 
 Conn Id	- mysql_con
 Host		- localhost
 Schema		- workflowtest
-Login		- << user created in Step -2 >>
-Password	- << password created in Step -2 >>		
+Login		- << user created in Step -1 >>
+Password	- << password created in Step -1 >>	
+Port		- 3306
+
+Step - 4
+Move this file to <<airflow/dags>> directory.
+Refresh the DAGS.
+ETL_mysql will get added in the DAGs
 
 """
 
