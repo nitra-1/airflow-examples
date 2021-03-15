@@ -6,9 +6,10 @@ Airflow installation steps:
   python3 --version
   
 **Install pip3 tool**
-  sudo apt install python3-pip
+
+  sudo apt install python3-pip 
   
-  --pip gets installed in “ .local/bin “ so add this path in the bash profile
+  pip gets installed in “ .local/bin “ so add this path in the bash profile
   
   pip3 install --upgrade pip==20.2.4 (airflow requires 20.2.4)
   
