@@ -2,6 +2,7 @@
 Author Nitin Rane
 
 Sample ETL process which takes data from from Tab1, modifies the data and inserts into Tab2
+Move this file to airflow/dags
 
 Prerequisites : 
 Step - 1 
