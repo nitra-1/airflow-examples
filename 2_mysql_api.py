@@ -32,6 +32,10 @@ Move this file to <<airflow/dags>> directory.
 Refresh the DAGS.
 ETL_mysql will get added in the DAGs
 
+task_load_records - call an api on localhost.
+The api is exposed by a spring boot server running on port 8081 on localhost. The end point is http://localhost:8081/users
+I have create a HTTP connecton from Airflow->Admin->Connections with the end point http://localhost:8081
+The connection id HTTP connection is "http_con"
 """
 
 from airflow import DAG
